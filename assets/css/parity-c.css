@@ -1,0 +1,160 @@
+/* Round 9, area C: audit fixes (behaviour and CSS). Loaded after styles.css, parity-b.css, parity-a.css.
+   Figma stays the source of truth for look and timing; this file only adds accessibility, wrapping,
+   mobile layout, scroll reveal curve and motion control. Values marked "Figma" in PARITY.md are not touched. */
+
+:root {
+  --ease-base: cubic-bezier(0.22, 1, 0.36, 1); /* skill B7 base curve */
+  --reveal-rise: 32px;
+  --text-placeholder: #8f8f93;
+  --input-border: #6b6b6e;
+}
+
+/* ---------- Scroll reveal: rise 32px, fade, 700ms, base curve (once only, observer in main.js) ---------- */
+.js .reveal { transform: translateY(var(--reveal-rise)); transition: opacity .7s var(--ease-base), transform .7s var(--ease-base); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.card-hover { transition: opacity .7s var(--ease-base), transform .7s var(--ease-base), box-shadow .25s ease-out, background-color .2s ease-out; }
+.bcard, .js .bcard.reveal { transition: opacity .7s var(--ease-base), transform .7s var(--ease-base), box-shadow .3s ease-out, padding .3s ease-out; }
+/* Reveal fallback: parity-c.js adds html.reveal-all when main.js or IntersectionObserver is unavailable */
+.js.reveal-all .reveal { opacity: 1; transform: none; }
+
+/* Hover transitions that Figma does not time (inline link, form fields): 300ms on the base curve */
+.inline-link { transition: color .3s var(--ease-base), text-decoration-thickness .3s var(--ease-base); }
+.field input, .field textarea { transition: border-color .3s var(--ease-base), box-shadow .3s var(--ease-base); }
+
+/* ---------- Word by word reveal on the About lead ---------- */
+.about__lead .word { opacity: .3; transition: opacity .6s var(--ease-base); }
+.about__lead .word.is-lit { opacity: 1; }
+
+/* ---------- Text wrapping ---------- */
+h1, h2, h3, .h-xl, .h-md, .hero__title, .about__lead, .footer__cta, .modal__title, .stat__big { text-wrap: balance; }
+p, li, blockquote p, .hero__lead, .choose__lead, .modal__text { text-wrap: pretty; }
+.status > span { text-wrap: balance; }
+.copyright p { text-wrap: pretty; }
+
+/* ---------- Contrast: placeholder, input border, inline links ---------- */
+.field input::placeholder, .field textarea::placeholder { color: var(--text-placeholder); opacity: 1; }
+.field input, .field textarea { border-color: var(--input-border); }
+.field input:hover, .field textarea:hover { border-color: #8f8f93; }
+.field.has-error input, .field.has-error textarea { border-color: #ff6b6b; }
+.inline-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.inline-link:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Hit areas: 44px minimum without changing the visual layout ---------- */
+.logo, .phone-link, .tlink, button.chip, .flink, .social__btn, .menu-btn, .inline-link, .nav__link { position: relative; }
+.logo { z-index: 1; } /* above the nav strip's padding so its 44px target is not stolen */
+.nav__link { --hit: 6px; }
+.nav__link::before { content: ""; position: absolute; inset: calc(-1 * var(--hit)) 0; }
+.logo::before { content: ""; position: absolute; inset: -4px 0; }
+.phone-link::before { content: ""; position: absolute; inset: -8px 0; }
+.tlink::before { content: ""; position: absolute; inset: -8px 0; }
+button.chip::before { content: ""; position: absolute; inset: -5px 0; }
+.flink::before { content: ""; position: absolute; inset: -14px -6px; }
+.social__btn::after { content: ""; position: absolute; inset: -3.5px; border-radius: 50%; } /* 1.5px border sits outside the pseudo's box */
+.menu-btn::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; }
+.inline-link::after { content: ""; position: absolute; inset: -12px -4px; }
+
+/* ---------- Focus: button ring as outline so it survives forced-colors mode (same white 3px look) ---------- */
+.btn:focus-visible .btn__pill, .btn:focus-visible .btn__circle { box-shadow: none; outline: 3px solid var(--border-focus); outline-offset: 0; }
+.crow:focus-visible .crow__circle { box-shadow: none; outline: 3px solid var(--border-focus); outline-offset: 0; }
+.menu-btn:focus-visible, .social__btn:focus-visible, .motion-toggle:focus-visible { border-radius: 50%; }
+
+@media (forced-colors: active) {
+  .btn:focus-visible .btn__pill, .btn:focus-visible .btn__circle, .crow:focus-visible .crow__circle { outline: 3px solid Highlight; outline-offset: 1px; }
+  .btn__pill, .btn__circle, .chip, .motion-toggle { border: 1px solid ButtonText; }
+  .chip[aria-pressed="true"], .chip--selected { border: 2px solid Highlight; }
+  .nav__link::after { background: Highlight; }
+  .nav__link.is-active { text-decoration: underline; }
+  .field input, .field textarea { border-color: FieldText; }
+  .modal__panel { border-color: CanvasText; }
+  .marquee { border-block: 1px solid CanvasText; }
+}
+
+/* ---------- Dialogs: translucent scrim (owner decision), 0.25s dissolve kept ---------- */
+.modal::backdrop { background: rgba(0, 0, 0, .5); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.modal[open]::backdrop { animation: fade-in .25s ease-out; }
+
+/* ---------- Motion control (WCAG 2.2.2) ---------- */
+.marquee:hover .marquee__track, .marquee:focus-within .marquee__track,
+.badge:hover .badge__ring, .badge:hover .badge__logo, .badge:focus-within .badge__ring, .badge:focus-within .badge__logo,
+.bcard--orbit:hover .orbit__av, .bcard--orbit:focus-within .orbit__av,
+html.anim-paused .marquee__track, html.anim-paused .badge__ring, html.anim-paused .badge__logo, html.anim-paused .orbit__av { animation-play-state: paused !important; }
+
+.hero { position: relative; }
+.motion-toggle { position: absolute; z-index: 3; right: max(var(--pad), calc((100% - 1480px) / 2)); bottom: -2px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-page); color: var(--text-primary); border: 1px solid var(--gray-700); transition: background-color .3s var(--ease-base), border-color .3s var(--ease-base); }
+.motion-toggle:hover { background: var(--bg-pill); border-color: var(--gray-600); }
+.motion-toggle svg { width: 18px; height: 18px; }
+.motion-toggle--fixed { position: fixed; right: 16px; bottom: 16px; }
+
+/* ---------- Badge ring overflow (transient 3px at 375px from the rotating square) ---------- */
+.badge { overflow: clip; }
+.hero__top { overflow-x: clip; }
+
+/* ---------- Chart card ---------- */
+.chart__keys span:first-child i, .chart__keys .key-before i { background: var(--text-secondary); }
+.chart__keys span:last-child i, .chart__keys .key-after i { background: var(--bg-accent); }
+.chart__cap { margin-left: 2px; font-size: 12px; font-weight: 400; line-height: 1; color: var(--text-secondary); letter-spacing: .02em; }
+.chart__tip { width: 76px; height: 44.7px; }
+.chart__tip-v { left: 8px; top: 5px; font-size: 12px; line-height: 1.5; }
+.chart__tip-t { left: 8px; top: 22px; font-size: 12px; gap: 5px; }
+.chart__tip-t i { width: 6px; height: 6px; }
+
+/* Header bar height must not depend on the --header-h value main.js writes back (it went stale after a resize) */
+.site-header__bar { min-height: 88px; }
+
+/* ---------- Stacked hero: breakpoint raised from 900px to 1200px so the note never overlaps the photo notch ---------- */
+@media (max-width: 1200px) {
+  .hero__media { aspect-ratio: auto; display: flex; flex-direction: column; gap: 24px; }
+  .hero__img { position: static; height: auto; aspect-ratio: 1536 / 864; -webkit-mask: none; mask: none; border-radius: 25px; }
+  .hero__note { position: static; width: auto; max-width: 680px; }
+  .hero__lead { font-size: 18px; }
+  .hero__sheen { -webkit-mask: none; mask: none; inset: auto; left: 0; top: 0; width: 100%; aspect-ratio: 1536 / 864; border-radius: 25px; }
+}
+
+/* ---------- Mobile and tablet (900px and below) ---------- */
+@media (max-width: 900px) {
+  /* note (lead + CTA) above the photo so the primary action is in the first screen; sheen follows the photo */
+  .hero__note { order: -1; }
+  .hero__sheen { top: auto; bottom: 0; }
+
+  /* header: two compact rows, about 72px tall (was 109px) */
+  .site-header { --header-h: 72px; }
+  .site-header__bar { min-height: 0; padding-block: 2px; gap: 0 12px; }
+  .menu-btn { width: 40px; height: 40px; }
+  .phone-link { padding: 6px; }
+  .phone-link::before { inset: -2px; } /* 44px target without eating into the nav strip below */
+  .logo__mark { width: 40px; height: 35px; } .logo__word { font-size: 34px; }
+  .nav { --hit: 9px; margin: -9px -4px; padding: 9px 36px 9px 4px; scroll-padding-inline: 12px 36px; overscroll-behavior-x: contain;
+    --fl: 0px; --fr: 28px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--fl), #000 calc(100% - var(--fr)), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 var(--fl), #000 calc(100% - var(--fr)), transparent 100%); }
+  .nav.is-scrolled { --fl: 24px; }
+  .nav.is-end { --fr: 0px; }
+  .nav__link { --hit: 9px; padding: 3px 8px; }
+  .nav__link::after { bottom: 1px; }
+}
+
+@media (max-width: 700px) {
+  .badge--hero { display: none; }
+  .hero__top { align-items: flex-start; }
+  .footer__top { gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero__title { font-size: clamp(36px, 11.3vw, 52px); } /* keeps 'Booking Flows That' on one line from 390px up */
+  .chart__tip { left: 46%; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .about__lead .word { opacity: 1 !important; transition: none !important; }
+  .motion-toggle { display: none; }
+  .inline-link, .field input, .field textarea { transition-duration: .01ms !important; }
+}
+
+/* ---------- Round 10: proof stat. 3.1 min is the main proof of the results card, so it is the biggest thing in it (Figma: 60px, PT Sans Narrow Bold; 6.4 min 28px) ---------- */
+.chart__nums { gap: 20px; align-items: baseline; }
+.chart__a { font-family: "PT Sans Narrow", "Public Sans", sans-serif; font-size: 60px; font-weight: 700; line-height: 1; }
+.chart__b { font-family: "PT Sans Narrow", "Public Sans", sans-serif; font-size: 28px; font-weight: 700; line-height: 1; }
+@media (max-width: 480px) { .chart__a { font-size: 48px; } .chart__b { font-size: 24px; } }
+@media (min-width: 481px) { .bcard--chart { gap: 14px; } }
+

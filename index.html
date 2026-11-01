@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arif Chowdhury, Product Designer (demo portfolio)</title>
+<meta name="description" content="Demo portfolio of Arif Chowdhury, a fictional product designer in Dhaka who designs booking and payment flows. Built from a Figma design as a dynamic HTML, CSS and JS page.">
+<meta name="theme-color" content="#0c0c0f">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<!-- replace REPLACE-WITH-PAGES-URL after GitHub Pages is live (canonical, og:url, og:image, twitter:image) -->
+<link rel="canonical" href="https://REPLACE-WITH-PAGES-URL/">
+<meta property="og:url" content="https://REPLACE-WITH-PAGES-URL/">
+<meta property="og:title" content="Booking Flows That Travelers Finish | Arif Chowdhury (demo portfolio)">
+<meta property="og:description" content="Booking Flows That Travelers Finish. A demo portfolio, fictional client.">
+<meta property="og:image" content="https://REPLACE-WITH-PAGES-URL/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Booking Flows That Travelers Finish. Arif Chowdhury, product designer, demo portfolio.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Booking Flows That Travelers Finish | Arif Chowdhury (demo portfolio)">
+<meta name="twitter:description" content="Booking Flows That Travelers Finish. A demo portfolio, fictional client.">
+<meta name="twitter:image" content="https://REPLACE-WITH-PAGES-URL/assets/img/og-cover.jpg">
+<meta name="twitter:image:alt" content="Booking Flows That Travelers Finish. Arif Chowdhury, product designer, demo portfolio.">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&amp;family=Public+Sans:wght@300;400;500;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/parity-b.css">
+<link rel="stylesheet" href="assets/css/parity-a.css">
+<link rel="stylesheet" href="assets/css/parity-c.css">
+<link rel="stylesheet" href="assets/css/parity-d.css">
+<script>document.documentElement.classList.add('js');</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-grid" viewBox="0 0 18 18" fill="none"><path d="M3.375 2.25H6.375C6.99632 2.25 7.5 2.75368 7.5 3.375V6.375C7.5 6.99632 6.99632 7.5 6.375 7.5H3.375C2.75368 7.5 2.25 6.99632 2.25 6.375V3.375C2.25 2.75368 2.75368 2.25 3.375 2.25Z" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M11.625 2.25H14.625C15.2463 2.25 15.75 2.75368 15.75 3.375V6.375C15.75 6.99632 15.2463 7.5 14.625 7.5H11.625C11.0037 7.5 10.5 6.99632 10.5 6.375V3.375C10.5 2.75368 11.0037 2.25 11.625 2.25Z" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M11.625 10.5H14.625C15.2463 10.5 15.75 11.0037 15.75 11.625V14.625C15.75 15.2463 15.2463 15.75 14.625 15.75H11.625C11.0037 15.75 10.5 15.2463 10.5 14.625V11.625C10.5 11.0037 11.0037 10.5 11.625 10.5Z" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M3.375 10.5H6.375C6.99632 10.5 7.5 11.0037 7.5 11.625V14.625C7.5 15.2463 6.99632 15.75 6.375 15.75H3.375C2.75368 15.75 2.25 15.2463 2.25 14.625V11.625C2.25 11.0037 2.75368 10.5 3.375 10.5Z" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-phone" viewBox="0 0 28 28" fill="none"><path d="M25.6667 19.74V23.24C25.668 23.5649 25.6014 23.8865 25.4713 24.1842C25.3411 24.4819 25.1502 24.7492 24.9108 24.9688C24.6713 25.1885 24.3887 25.3557 24.0809 25.4598C23.7731 25.5639 23.4469 25.6026 23.1233 25.5733C19.5333 25.1832 16.0848 23.9565 13.055 21.9917C10.2361 20.2004 7.84623 17.8105 6.055 14.9917C4.08331 11.9481 2.85628 8.48283 2.47333 4.87667C2.44418 4.55404 2.48252 4.22889 2.58592 3.9219C2.68931 3.6149 2.8555 3.3328 3.07389 3.09356C3.29229 2.85431 3.55811 2.66316 3.85442 2.53228C4.15074 2.40139 4.47106 2.33364 4.795 2.33333H8.295C8.86119 2.32776 9.41009 2.52826 9.83939 2.89745C10.2687 3.26665 10.5491 3.77935 10.6283 4.34C10.7761 5.46008 11.05 6.55985 11.445 7.61833C11.602 8.03591 11.6359 8.48973 11.5429 8.92603C11.4498 9.36232 11.2337 9.7628 10.92 10.08L9.43833 11.5617C11.0991 14.4825 13.5175 16.9009 16.4383 18.5617L17.92 17.08C18.2372 16.7663 18.6377 16.5502 19.074 16.4571C19.5103 16.3641 19.9641 16.398 20.3817 16.555C21.4402 16.95 22.5399 17.2239 23.66 17.3717C24.2267 17.4516 24.7443 17.7371 25.1143 18.1737C25.4843 18.6104 25.6809 19.1678 25.6667 19.74Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-asterisk" viewBox="0 0 16 16" fill="none"><path d="M8 3.33333V12.6667" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M3.96 5.66667L12.04 10.3333" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M3.96 10.3333L12.04 5.66667" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 20 20" fill="none"><path d="M4.16667 10H15.8333" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M10.8333 5L15.8333 10L10.8333 15" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-check" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.5 14.1667L3.33333 10" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 40 40" fill="none"><path d="M36.6667 20C36.6667 29.2047 29.2047 36.6667 20 36.6667C10.7953 36.6667 3.33333 29.2047 3.33333 20C3.33333 10.7953 10.7953 3.33333 20 3.33333C29.2047 3.33333 36.6667 10.7953 36.6667 20Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M13.3333 20.8333L18 25.5L26.6667 15.8333" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-check-square" viewBox="0 0 64 64" fill="none"><path d="M24 29.3333L32 37.3333L58.6667 10.6667" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M56 32V50.6667C56 52.0812 55.4381 53.4377 54.4379 54.4379C53.4377 55.4381 52.0812 56 50.6667 56H13.3333C11.9188 56 10.5623 55.4381 9.5621 54.4379C8.5619 53.4377 8 52.0812 8 50.6667V13.3333C8 11.9188 8.5619 10.5623 9.5621 9.5621C10.5623 8.5619 11.9188 8 13.3333 8H42.6667" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-code" viewBox="0 0 64 64" fill="none"><path d="M13.3333 10.6667H50.6667C53.6122 10.6667 56 13.0545 56 16V48C56 50.9455 53.6122 53.3333 50.6667 53.3333H13.3333C10.3878 53.3333 8 50.9455 8 48V16C8 13.0545 10.3878 10.6667 13.3333 10.6667Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M8 24H56" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M25.3333 34.6667L20 40L25.3333 45.3333" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M38.6667 34.6667L44 40L38.6667 45.3333" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-compass" viewBox="0 0 64 64" fill="none"><path d="M58.6667 32C58.6667 46.7276 46.7276 58.6667 32 58.6667C17.2724 58.6667 5.33333 46.7276 5.33333 32C5.33333 17.2724 17.2724 5.33333 32 5.33333C46.7276 5.33333 58.6667 17.2724 58.6667 32Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M43.3067 20.6933L37.6533 37.6533L20.6933 43.3067L26.3467 26.3467L43.3067 20.6933Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-award" viewBox="0 0 62 62" fill="none"><path d="M49.0833 20.6667C49.0833 30.6538 40.9872 38.75 31 38.75C21.0129 38.75 12.9167 30.6538 12.9167 20.6667C12.9167 10.6795 21.0129 2.58333 31 2.58333C40.9872 2.58333 49.0833 10.6795 49.0833 20.6667Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M21.2092 35.8825L18.0833 59.4167L31 51.6667L43.9167 59.4167L40.7908 35.8567" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-layers" viewBox="0 0 63 63" fill="none"><path d="M31.5 5.25L57.75 18.375L31.5 31.5L5.25 18.375L31.5 5.25Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M5.25 31.5L31.5 44.625L57.75 31.5" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M5.25 44.625L31.5 57.75L57.75 44.625" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-lifebuoy" viewBox="0 0 64 64" fill="none"><path d="M58.6667 32C58.6667 46.7276 46.7276 58.6667 32 58.6667C17.2724 58.6667 5.33333 46.7276 5.33333 32C5.33333 17.2724 17.2724 5.33333 32 5.33333C46.7276 5.33333 58.6667 17.2724 58.6667 32Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M42.6667 32C42.6667 37.891 37.891 42.6667 32 42.6667C26.109 42.6667 21.3333 37.891 21.3333 32C21.3333 26.109 26.109 21.3333 32 21.3333C37.891 21.3333 42.6667 26.109 42.6667 32Z" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M13.1467 13.1467L24.4533 24.4533" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M39.5467 39.5467L50.8533 50.8533" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M39.5467 24.4533L50.8533 13.1467" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M13.1467 50.8533L24.4533 39.5467" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-split" viewBox="0 0 64 64" fill="none"><path d="M42.6667 8H56V21.3333" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M21.3333 8H8V21.3333" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M32 58.6667V36.5333C32.0152 35.1142 31.7471 33.7064 31.2114 32.3922C30.6756 31.078 29.883 29.884 28.88 28.88L8 8" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M40 24L56 8" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-activity" viewBox="0 0 65 65" fill="none"><path d="M8.125 18.9583V13.5417C8.125 12.1051 8.69568 10.7273 9.7115 9.7115C10.7273 8.69568 12.1051 8.125 13.5417 8.125H18.9583" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M46.0417 8.125H51.4583C52.8949 8.125 54.2727 8.69568 55.2885 9.7115C56.3043 10.7273 56.875 12.1051 56.875 13.5417V18.9583" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M56.875 46.0417V51.4583C56.875 52.8949 56.3043 54.2727 55.2885 55.2885C54.2727 56.3043 52.8949 56.875 51.4583 56.875H46.0417" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M18.9583 56.875H13.5417C12.1051 56.875 10.7273 56.3043 9.7115 55.2885C8.69568 54.2727 8.125 52.8949 8.125 51.4583V46.0417" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M18.9583 32.5H25.7292L29.7917 24.375L35.2083 40.625L39.2708 32.5H46.0417" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-users" viewBox="0 0 40 40" fill="none"><path d="M28.3333 35V31.6667C28.3333 29.8986 27.631 28.2029 26.3807 26.9526C25.1305 25.7024 23.4348 25 21.6667 25H8.33333C6.56522 25 4.86953 25.7024 3.61929 26.9526C2.36905 28.2029 1.66667 29.8986 1.66667 31.6667V35" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M21.6667 11.6667C21.6667 15.3486 18.6819 18.3333 15 18.3333C11.3181 18.3333 8.33333 15.3486 8.33333 11.6667C8.33333 7.98477 11.3181 5 15 5C18.6819 5 21.6667 7.98477 21.6667 11.6667Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M38.3333 35V31.6667C38.3322 30.1895 37.8406 28.7546 36.9356 27.5872C36.0306 26.4198 34.7635 25.5859 33.3333 25.2167" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M26.6667 5.21667C28.1007 5.58384 29.3717 6.41783 30.2794 7.58718C31.1871 8.75653 31.6797 10.1947 31.6797 11.675C31.6797 13.1553 31.1871 14.5935 30.2794 15.7628C29.3717 16.9322 28.1007 17.7662 26.6667 18.1333" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-quote" viewBox="0 0 32 32" fill="none"><path d="M4 28C8 28 13.3333 26.6667 13.3333 17.3333V6.66667C13.3333 5.95942 13.0524 5.28115 12.5523 4.78105C12.0522 4.28095 11.3739 4 10.6667 4H5.33333C4.62609 4 3.94781 4.28095 3.44772 4.78105C2.94762 5.28115 2.66667 5.95942 2.66667 6.66667V14.6667C2.66667 15.3739 2.94762 16.0522 3.44772 16.5523C3.94781 17.0524 4.62609 17.3333 5.33333 17.3333H9.33333C9.33333 21.3333 8 24 4 25.3333V28Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M20 28C24 28 29.3333 26.6667 29.3333 17.3333V6.66667C29.3333 5.95942 29.0524 5.28115 28.5523 4.78105C28.0522 4.28095 27.3739 4 26.6667 4H21.3333C20.6261 4 19.9478 4.28095 19.4477 4.78105C18.9476 5.28115 18.6667 5.95942 18.6667 6.66667V14.6667C18.6667 15.3739 18.9476 16.0522 19.4477 16.5523C19.9478 17.0524 20.6261 17.3333 21.3333 17.3333H25.3333C25.3333 21.3333 24 24 20 25.3333V28Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 32 32" fill="none"><path d="M6.66667 5.33333H25.3333C26.8061 5.33333 28 6.52724 28 8V26.6667C28 28.1394 26.8061 29.3333 25.3333 29.3333H6.66667C5.19391 29.3333 4 28.1394 4 26.6667V8C4 6.52724 5.19391 5.33333 6.66667 5.33333Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M21.3333 2.66667V8" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M10.6667 2.66667V8" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M4 13.3333H28" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-banknote" viewBox="0 0 32 32" fill="none"><path d="M5.33333 8H26.6667C28.1394 8 29.3333 9.19391 29.3333 10.6667V21.3333C29.3333 22.8061 28.1394 24 26.6667 24H5.33333C3.86057 24 2.66667 22.8061 2.66667 21.3333V10.6667C2.66667 9.19391 3.86057 8 5.33333 8Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M19.3333 16C19.3333 17.8409 17.8409 19.3333 16 19.3333C14.1591 19.3333 12.6667 17.8409 12.6667 16C12.6667 14.1591 14.1591 12.6667 16 12.6667C17.8409 12.6667 19.3333 14.1591 19.3333 16Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M8 16H8.01333" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M24 16H24.0133" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-clock" viewBox="0 0 32 32" fill="none"><path d="M29.3333 16C29.3333 23.3638 23.3638 29.3333 16 29.3333C8.6362 29.3333 2.66667 23.3638 2.66667 16C2.66667 8.6362 8.6362 2.66667 16 2.66667C23.3638 2.66667 29.3333 8.6362 29.3333 16Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M16 8V16L21.3333 18.6667" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M2 9H6V21H2V9Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M6 4C6 5.10457 5.10457 6 4 6C2.89543 6 2 5.10457 2 4C2 2.89543 2.89543 2 4 2C5.10457 2 6 2.89543 6 4Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-dribbble" viewBox="0 0 24 24" fill="none"><path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M21.75 12.84C15.13 11.43 9.61 13.84 5.37 19.16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M8.56 2.75C12.93 8.75 14.56 12.17 16.56 20.47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24" fill="none"><path d="M7 2H17C19.7614 2 22 4.23858 22 7V17C22 19.7614 19.7614 22 17 22H7C4.23858 22 2 19.7614 2 17V7C2 4.23858 4.23858 2 7 2Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M17.5 6.5H17.51" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-figma" viewBox="0 0 24 24" fill="none"><path d="M5 5.5C5 4.57174 5.36875 3.6815 6.02513 3.02513C6.6815 2.36875 7.57174 2 8.5 2H12V9H8.5C7.57174 9 6.6815 8.63125 6.02513 7.97487C5.36875 7.3185 5 6.42826 5 5.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M12 2H15.5C15.9596 2 16.4148 2.09053 16.8394 2.26642C17.264 2.44231 17.6499 2.70012 17.9749 3.02513C18.2999 3.35013 18.5577 3.73597 18.7336 4.16061C18.9095 4.58525 19 5.04037 19 5.5C19 5.95963 18.9095 6.41475 18.7336 6.83939C18.5577 7.26403 18.2999 7.64987 17.9749 7.97487C17.6499 8.29988 17.264 8.55769 16.8394 8.73358C16.4148 8.90947 15.9596 9 15.5 9H12V2Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M12 12.5C12 12.0404 12.0905 11.5852 12.2664 11.1606C12.4423 10.736 12.7001 10.3501 13.0251 10.0251C13.3501 9.70012 13.736 9.44231 14.1606 9.26642C14.5852 9.09053 15.0404 9 15.5 9C15.9596 9 16.4148 9.09053 16.8394 9.26642C17.264 9.44231 17.6499 9.70012 17.9749 10.0251C18.2999 10.3501 18.5577 10.736 18.7336 11.1606C18.9095 11.5852 19 12.0404 19 12.5C19 12.9596 18.9095 13.4148 18.7336 13.8394C18.5577 14.264 18.2999 14.6499 17.9749 14.9749C17.6499 15.2999 17.264 15.5577 16.8394 15.7336C16.4148 15.9095 15.9596 16 15.5 16C15.0404 16 14.5852 15.9095 14.1606 15.7336C13.736 15.5577 13.3501 15.2999 13.0251 14.9749C12.7001 14.6499 12.4423 14.264 12.2664 13.8394C12.0905 13.4148 12 12.9596 12 12.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M5 19.5C5 18.5717 5.36875 17.6815 6.02513 17.0251C6.6815 16.3687 7.57174 16 8.5 16H12V19.5C12 20.4283 11.6313 21.3185 10.9749 21.9749C10.3185 22.6313 9.42826 23 8.5 23C7.57174 23 6.6815 22.6313 6.02513 21.9749C5.36875 21.3185 5 20.4283 5 19.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M5 12.5C5 11.5717 5.36875 10.6815 6.02513 10.0251C6.6815 9.36875 7.57174 9 8.5 9H12V16H8.5C7.57174 16 6.6815 15.6313 6.02513 14.9749C5.36875 14.3185 5 13.4283 5 12.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-headset" viewBox="0 0 28 28" fill="none"><path d="M3.5 16.3333V14C3.5 11.2152 4.60625 8.54451 6.57538 6.57538C8.54451 4.60625 11.2152 3.5 14 3.5C16.7848 3.5 19.4555 4.60625 21.4246 6.57538C23.3938 8.54451 24.5 11.2152 24.5 14V16.3333" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M24.5 22.1667C24.5 22.7855 24.2542 23.379 23.8166 23.8166C23.379 24.2542 22.7855 24.5 22.1667 24.5H21C20.3812 24.5 19.7877 24.2542 19.3501 23.8166C18.9125 23.379 18.6667 22.7855 18.6667 22.1667V18.6667C18.6667 18.0478 18.9125 17.4543 19.3501 17.0168C19.7877 16.5792 20.3812 16.3333 21 16.3333H24.5V22.1667Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M3.5 22.1667C3.5 22.7855 3.74583 23.379 4.18342 23.8166C4.621 24.2542 5.21449 24.5 5.83333 24.5H7C7.61884 24.5 8.21233 24.2542 8.64992 23.8166C9.0875 23.379 9.33333 22.7855 9.33333 22.1667V18.6667C9.33333 18.0478 9.0875 17.4543 8.64992 17.0168C8.21233 16.5792 7.61884 16.3333 7 16.3333H3.5V22.1667Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-map-pin" viewBox="0 0 28 28" fill="none"><path d="M24.5 11.6667C24.5 19.8333 14 26.8333 14 26.8333C14 26.8333 3.5 19.8333 3.5 11.6667C3.5 8.88189 4.60625 6.21118 6.57538 4.24205C8.54451 2.27291 11.2152 1.16667 14 1.16667C16.7848 1.16667 19.4555 2.27291 21.4246 4.24205C23.3938 6.21118 24.5 8.88189 24.5 11.6667Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M17.5 11.6667C17.5 13.5997 15.933 15.1667 14 15.1667C12.067 15.1667 10.5 13.5997 10.5 11.6667C10.5 9.73367 12.067 8.16667 14 8.16667C15.933 8.16667 17.5 9.73367 17.5 11.6667Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-tick" viewBox="0 0 28 28" fill="none"><path d="M5.83333 14.5833L11.0833 19.8333L22.1667 8.75" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-logo" viewBox="0 0 68 60" fill="none"><path d="M34 0L68 60H53.04L46.24 45.6H21.76L14.96 60H0L34 0ZM34 20.4L27.2 34.8H40.8L34 20.4Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/></symbol>
+<symbol id="i-rings" viewBox="0 0 381 227.181" fill="none"><path d="M283.522 227C288.478 214.201 290.762 200.483 290.19 186.697C289.484 169.66 284.439 153.087 275.534 138.555C266.63 124.023 254.163 112.014 239.319 103.671C224.475 95.3275 207.747 90.9273 190.727 90.8885C173.706 90.8498 156.958 95.1738 142.077 103.449C127.195 111.725 114.674 123.677 105.704 138.168C96.7336 152.66 91.6132 169.21 90.8293 186.243C90.1881 200.178 92.4664 214.058 97.478 227M51.8223 227C46.9495 208.24 45.911 188.651 48.8095 169.417C52.1985 146.928 60.873 125.566 74.1181 107.094C87.3633 88.6214 104.8 73.5661 124.992 63.1684C145.184 52.7707 167.552 47.3283 190.255 47.2894C212.958 47.2506 235.346 52.6165 255.573 62.9451C275.8 73.2737 293.288 88.2693 306.596 106.696C319.904 125.124 328.651 146.455 332.117 168.933C335.106 188.319 334.092 208.08 329.178 227M377.041 227C381.858 202.055 381.648 176.362 376.384 151.44C370.449 123.342 358.244 96.9539 340.684 74.2521C323.124 51.5504 300.663 33.1239 274.985 20.3532C249.307 7.58243 221.078 0.798503 192.411 0.50963C163.745 0.220757 135.384 6.43443 109.455 18.6851C83.5261 30.9358 60.7002 48.906 42.6877 71.2492C24.6752 93.5925 11.943 119.73 5.44508 147.702C-0.607609 173.758 -1.10506 200.778 3.9585 227" stroke="currentColor"/></symbol>
+<symbol id="i-chart-after" viewBox="0 0 313.64 61.5706" fill="none"><path d="M0.345826 42.6714C27.6793 32.5972 42.7383 37.0004 69.3458 54.1714C87.1595 65.6342 97.9022 64.329 120.346 28.1714C139.307 0.399909 151.383 -7.28854 172.865 10.7347C176.958 14.1681 180.074 18.6247 182.666 23.2954C204.198 62.0989 220.382 66.7876 254.346 34.6714C277.182 7.33566 289.986 1.77754 312.846 31.6714" stroke-width="2" stroke="currentColor"/></symbol>
+<symbol id="i-chart-before" viewBox="0 0 314.055 73.6169" fill="none"><path d="M0.244557 15.7549C33.9309 7.25871 56.7446 12.7575 67.2446 49.7575C77.7446 86.7575 103.745 74.2549 119.745 44.7575C135.745 15.2601 162.245 3.64614 179.745 31.7549C197.245 59.8637 210.134 66.2984 238.245 31.7549C263.7 -4.72609 280.507 -13.541 313.245 31.7557" stroke-width="2" stroke="currentColor"/></symbol>
+<symbol id="i-tooltip" viewBox="0 0 62 36.5" fill="none"><path d="M0 4C0 1.79086 1.79086 0 4 0H58C60.2091 0 62 1.79086 62 4V24.9756C62 27.1847 60.2091 28.9756 58 28.9756H39L32.5 36.5V28.9756H4C1.79086 28.9756 0 27.1847 0 24.9756V4Z" fill="currentColor"/></symbol>
+<symbol id="i-split48" viewBox="0 0 48 48" fill="none"><path d="M32 6H42V16" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M16 6H6V16" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M24 44V27.4C24.0114 26.3357 23.8103 25.2798 23.4085 24.2942C23.0067 23.3085 22.4123 22.413 21.66 21.66L6 6" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M30 18L42 6" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-lifebuoy48" viewBox="0 0 48 48" fill="none"><path d="M44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M32 24C32 28.4183 28.4183 32 24 32C19.5817 32 16 28.4183 16 24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24Z" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M9.86 9.86L18.34 18.34" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M29.66 29.66L38.14 38.14" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M29.66 18.34L38.14 9.86" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M9.86 38.14L18.34 29.66" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-activity48" viewBox="0 0 48 48" fill="none"><path d="M6 14V10C6 8.93913 6.42143 7.92172 7.17157 7.17157C7.92172 6.42143 8.93913 6 10 6H14" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M34 6H38C39.0609 6 40.0783 6.42143 40.8284 7.17157C41.5786 7.92172 42 8.93913 42 10V14" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M42 34V38C42 39.0609 41.5786 40.0783 40.8284 40.8284C40.0783 41.5786 39.0609 42 38 42H34" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M14 42H10C8.93913 42 7.92172 41.5786 7.17157 40.8284C6.42143 40.0783 6 39.0609 6 38V34" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/> <path d="M14 24H19L22 18L26 30L29 24H34" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+</defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="wrap site-header__bar">
+    <a class="logo" href="#home" aria-label="Arif, home">
+      <svg class="logo__mark" viewBox="0 0 68 60" aria-hidden="true"><use href="#i-logo"/></svg>
+      <span class="logo__word">ARIF</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link is-active" href="#home" aria-current="true">Home</a>
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#work">Work</a>
+      <a class="nav__link" href="#notes">Notes</a>
+      <a class="nav__link" href="#process">Process</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </nav>
+    <div class="site-header__actions">
+      <button class="phone-link" type="button" data-open="contact" aria-label="Contact, +880-170-0000">
+        <svg class="ico ico--28" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-phone"/></svg>
+        <span>+880-170-0000</span>
+      </button>
+      <a class="menu-btn" href="#contact" aria-label="Go to contact and footer">
+        <svg class="menu-btn__icon" viewBox="0 0 18 18" aria-hidden="true"><use href="#i-grid"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="hero" id="home" aria-labelledby="hero-title" data-nav="home">
+  <div class="wrap hero__top reveal">
+    <h1 class="hero__title" id="hero-title">Booking Flows That<br>Travelers Finish</h1>
+    <button class="badge badge--hero" type="button" data-open="contact" aria-label="Start your project">
+      <svg class="badge__ring" viewBox="0 0 236 236" aria-hidden="true">
+        <defs><path id="ring-hero" d="M118,118 m-101,0 a101,101 0 1,1 202,0 a101,101 0 1,1 -202,0"/></defs>
+        <text><textPath href="#ring-hero" textLength="630" lengthAdjust="spacing">START YOUR PROJECT * START YOUR PROJECT * </textPath></text>
+      </svg>
+      <svg class="badge__logo" viewBox="0 0 68 60" aria-hidden="true"><use href="#i-logo"/></svg>
+    </button>
+  </div>
+  <div class="wrap hero__media-wrap reveal">
+    <div class="hero__media">
+      <img class="hero__img" src="assets/img/hero.jpg" srcset="assets/img/hero-640.jpg 640w, assets/img/hero-1024.jpg 1024w, assets/img/hero.jpg 1536w" sizes="(min-width: 1440px) 1480px, 100vw" fetchpriority="high" decoding="async" width="1536" height="864" alt="Arif Chowdhury smiling at a wooden desk, with a laptop showing a hotel booking interface">
+      <span class="hero__sheen" aria-hidden="true"></span>
+      <div class="hero__note">
+        <p class="hero__lead">I'm Arif, a product designer in Dhaka. I design booking and payment flows that cut steps, not corners.</p>
+        <a class="btn" href="#work"><span class="btn__pill">See my work</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" aria-label="Skills: user research, booking flow design, design systems, travel and payment UX, interactive prototypes">
+    <div class="marquee__track">
+      <ul class="marquee__group">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>USER RESEARCH</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>BOOKING FLOW DESIGN</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>DESIGN SYSTEMS</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>TRAVEL AND PAYMENT UX</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>INTERACTIVE PROTOTYPES</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>USER RESEARCH</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>BOOKING FLOW DESIGN</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>DESIGN SYSTEMS</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>TRAVEL AND PAYMENT UX</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asterisk"/></svg>INTERACTIVE PROTOTYPES</li>
+      </ul>
+      <ul class="marquee__group" aria-hidden="true">
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>USER RESEARCH</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>BOOKING FLOW DESIGN</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>DESIGN SYSTEMS</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>TRAVEL AND PAYMENT UX</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>INTERACTIVE PROTOTYPES</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>USER RESEARCH</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>BOOKING FLOW DESIGN</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>DESIGN SYSTEMS</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>TRAVEL AND PAYMENT UX</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-asterisk"/></svg>INTERACTIVE PROTOTYPES</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ABOUT -->
+<section class="about section" id="about" aria-labelledby="about-title" data-nav="about">
+  <div class="wrap">
+    <div class="about__top reveal">
+      <!-- is-decor: purely decorative badge. Note for Y (CSS): no hover or cursor affordance for .badge.is-decor (styles.css line 178 .badge:hover .badge__logo colour change must not apply). -->
+      <span class="badge badge--about is-decor" aria-hidden="true">
+        <svg class="badge__ring" viewBox="0 0 208 208" aria-hidden="true">
+          <defs><path id="ring-about" d="M104,104 m-89,0 a89,89 0 1,1 178,0 a89,89 0 1,1 -178,0"/></defs>
+          <text><textPath href="#ring-about" textLength="553" lengthAdjust="spacing">ABOUT ARIF * ABOUT ARIF * ABOUT ARIF * </textPath></text>
+        </svg>
+        <svg class="badge__logo" viewBox="0 0 68 60" aria-hidden="true"><use href="#i-logo"/></svg>
+      </span>
+      <div class="about__copy">
+        <h2 class="about__lead" id="about-title">I design booking flows <span>that feel obvious, not clever. I turn travel and payment chaos into </span>simple steps people finish.</h2>
+        <div class="about__meta">
+          <a class="btn" href="#contact"><span class="btn__pill">Book a call</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <div class="person">
+            <img src="assets/img/avatar-arif.jpg" width="48" height="48" loading="lazy" alt="Portrait of Arif Chowdhury">
+            <div><p class="person__name">ARIF C.</p><p class="person__role">Product Designer</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about__cards">
+      <article class="glass reveal">
+        <p class="eyebrow eyebrow--sm"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>HOW I WORK</p>
+        <div class="glass__body">
+          <h3 class="h-md">ASK WHY FIRST</h3>
+          <p>Before any screen, I ask why a traveler would pick this over the usual way.</p>
+          <div class="chips"><button class="chip" type="button" aria-pressed="false">Research</button><button class="chip" type="button" aria-pressed="false">Interviews</button></div>
+        </div>
+      </article>
+      <article class="glass reveal">
+        <p class="eyebrow eyebrow--sm"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>HOW I WORK</p>
+        <div class="glass__body">
+          <h3 class="h-md">TEST ON THE GROUND</h3>
+          <p>I sit with real users, watch them book, and note every stumble. Those notes decide what we cut.</p>
+          <div class="chips"><button class="chip" type="button" aria-pressed="false">Booking</button><button class="chip" type="button" aria-pressed="false">Payments</button></div>
+        </div>
+      </article>
+      <article class="glass reveal">
+        <p class="eyebrow eyebrow--sm"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>HOW I WORK</p>
+        <div class="glass__body">
+          <h3 class="h-md">OWN THE FLOW</h3>
+          <p>From first search to payment receipt, I design every step, so nothing falls between screens.</p>
+          <div class="chips"><button class="chip" type="button" aria-pressed="false">Flows</button><button class="chip" type="button" aria-pressed="false">Prototypes</button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SERVICES -->
+<section class="services section panel panel--xl" id="services" aria-labelledby="services-title" data-nav="about">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>SERVICES</p>
+      <h2 class="h-xl" id="services-title">DESIGN THAT MAKES<br>BOOKING EASY</h2>
+    </header>
+    <div class="services__grid">
+      <article class="card card-hover reveal">
+        <div class="card__top">
+          <svg class="ico ico--64" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-code"/></svg>
+          <h3 class="h-md">USER RESEARCH</h3>
+          <p>Interviews and usability tests that show where travelers get stuck.</p>
+        </div>
+        <div class="card__bottom">
+          <ul class="checks"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Field Interviews</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Usability Testing</li></ul>
+          <div class="card__foot"><a class="tlink" href="#pricing"><span>Read more<span class="sr-only"> about User research</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+      <article class="card card-hover reveal">
+        <div class="card__top">
+          <svg class="ico ico--64" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-lifebuoy"/></svg>
+          <h3 class="h-md">UX FLOWS</h3>
+          <p>Journey maps and flows, search to receipt, edge cases included.</p>
+        </div>
+        <div class="card__bottom">
+          <ul class="checks"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Journey Mapping</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Edge Case Flows</li></ul>
+          <div class="card__foot"><a class="tlink" href="#pricing"><span>Read more<span class="sr-only"> about UX flows</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+      <article class="card card-hover reveal">
+        <div class="card__top">
+          <svg class="ico ico--64" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-split"/></svg>
+          <h3 class="h-md">HIGH FIDELITY UI</h3>
+          <p>Clean, accessible UI for mobile and web, ready for dev.</p>
+        </div>
+        <div class="card__bottom">
+          <ul class="checks"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Mobile and Web UI</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Accessible Components</li></ul>
+          <div class="card__foot"><a class="tlink" href="#pricing"><span>Read more<span class="sr-only"> about High fidelity UI</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+      <article class="card card-hover reveal">
+        <div class="card__top">
+          <svg class="ico ico--64" viewBox="0 0 65 65" aria-hidden="true"><use href="#i-activity"/></svg>
+          <h3 class="h-md">DESIGN SYSTEMS</h3>
+          <p>Tokens and components that keep every screen consistent.</p>
+        </div>
+        <div class="card__bottom">
+          <ul class="checks"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Design Tokens</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Component Library</li></ul>
+          <div class="card__foot"><a class="tlink" href="#pricing"><span>Read more<span class="sr-only"> about Design systems</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+    <p class="status reveal"><span class="status__tag">Open</span><span>Open for new projects. <a class="inline-link" href="#contact" data-open="contact">Check availability</a></span></p>
+  </div>
+</section>
+
+<!-- 4. CHOOSE -->
+<section class="choose section" id="why" aria-labelledby="why-title" data-nav="about">
+  <div class="wrap choose__grid">
+    <div class="choose__img reveal"><img src="assets/img/choose-1.jpg" width="760" height="1351" loading="lazy" alt="A designer sketching a booking flow on a whiteboard covered in sticky notes"></div>
+    <div class="choose__mid reveal">
+      <div class="choose__img choose__img--b"><img src="assets/img/choose-2.jpg" width="760" height="1351" loading="lazy" alt="Hands holding a phone that shows a hotel booking screen, café table behind"></div>
+      <div class="teammates">
+        <div class="avatars"><img src="assets/img/av-a.jpg" width="48" height="48" loading="lazy" alt=""><img src="assets/img/av-b.jpg" width="48" height="48" loading="lazy" alt=""><span class="avatars__more">12+</span></div>
+        <p>teammates I've<br>shipped with</p>
+      </div>
+    </div>
+    <div class="choose__copy reveal">
+      <header>
+        <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>WHY WORK WITH ME</p>
+        <h2 class="h-xl" id="why-title">WHY TEAMS TRUST ME<br>TO SHIP CLEAR FLOWS</h2>
+        <p class="choose__lead">I join product teams as the person who asks the obvious question first. I bring research, flows and polished UI in one pass, so engineers get fewer surprises and travelers get fewer steps.</p>
+      </header>
+      <div class="choose__row">
+        <div class="choose__list">
+          <ul class="checks checks--muted"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Users drop off and nobody knows why</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Payment screens that confuse or fail</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Features added without a clear flow</li></ul>
+          <a class="btn" href="#contact"><span class="btn__pill">Contact me</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        </div>
+        <div class="stats-card">
+          <div class="stat"><svg class="ico ico--40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-users"/></svg><div><p class="stat__num">40+</p><p class="stat__label">Interviews</p></div></div>
+          <div class="stat stat--line"><svg class="ico ico--40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-check-circle"/></svg><div><p class="stat__num">12</p><p class="stat__label">Flows Shipped</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROCESS -->
+<section class="process section panel" id="process" aria-labelledby="process-title" data-nav="process">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>MY PROCESS</p>
+      <h2 class="h-xl" id="process-title">FROM FIRST QUESTION<br>TO FINAL SCREEN</h2>
+    </header>
+    <div class="process__grid">
+      <article class="pcard glass reveal">
+        <div>
+          <h3 class="h-md">DISCOVER</h3>
+          <p class="pcard__text">Interviews, audits and competitor reviews to find the real problem.</p>
+        </div>
+        <div class="pcard__low">
+          <div class="pstats"><div><p class="pstats__n">10</p><p>Interviews</p></div><div><p class="pstats__n">3</p><p>Core Findings</p></div></div>
+          <div class="person person--line"><img src="assets/img/avatar-arif.jpg" width="48" height="48" loading="lazy" alt="Portrait of Arif Chowdhury"><div><p class="person__name">ARIF C.</p><p class="person__role">Product Designer</p></div></div>
+        </div>
+      </article>
+      <article class="pcard pcard--define glass reveal">
+        <div>
+          <div class="avatars avatars--lg"><img src="assets/img/av-p2.jpg" width="48" height="48" loading="lazy" alt=""><img src="assets/img/av-sara.jpg" width="48" height="48" loading="lazy" alt=""><img src="assets/img/av-p4.jpg" width="48" height="48" loading="lazy" alt=""><img src="assets/img/av-p5.jpg" width="48" height="48" loading="lazy" alt=""><span class="avatars__more">8+</span></div>
+          <div class="stars" aria-label="Five stars"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg></div>
+          <p class="pcard__text">Teams I've Worked With</p>
+        </div>
+        <div>
+          <h3 class="h-md">DEFINE</h3>
+          <p class="pcard__text">I turn findings into a clear problem and flow map.</p>
+          <div class="pcard__imgbox"><img class="pcard__img" src="assets/img/process-team.jpg" width="600" height="338" loading="lazy" alt="A team workshop around a table, sticky notes on the wall behind"></div>
+        </div>
+      </article>
+      <article class="pcard pcard--photo reveal">
+        <img class="pcard__bg" src="assets/img/process-design.jpg" width="760" height="1013" loading="lazy" alt="A laptop on a dark desk next to a notebook and a coffee mug">
+        <div class="pcard__scrim"></div>
+        <div class="pcard__cap">
+          <h3 class="h-md">DESIGN</h3>
+          <p class="pcard__text">Wireframes to polished screens.</p>
+        </div>
+      </article>
+      <article class="pcard glass reveal">
+        <div>
+          <h3 class="h-md">DELIVER</h3>
+          <p class="pcard__text">Tokens and specs ready, so engineers build what I designed.</p>
+        </div>
+        <div class="pcard__low">
+          <div class="pstats"><div><p class="pstats__n">24</p><p>Screens Handed Off</p></div></div>
+          <div class="person person--line"><img src="assets/img/av-b.jpg" width="48" height="48" loading="lazy" alt="Portrait of Rafi Ahmed"><div><p class="person__name">RAFI AHMED</p><p class="person__role">Engineering Lead</p></div></div>
+        </div>
+      </article>
+    </div>
+    <p class="status reveal"><span class="status__tag">New</span><span>From question to shipped screen. <a class="inline-link" href="#work">See the case studies</a></span></p>
+  </div>
+</section>
+
+<!-- 6. BENTO / CORE VALUE -->
+<section class="results section" id="results" aria-labelledby="results-title" data-nav="work">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>RESULTS</p>
+      <h2 class="h-xl" id="results-title">DESIGN <span class="accent-word">DECISIONS</span> BACKED<br>BY REAL USERS</h2>
+    </header>
+    <div class="bento">
+      <article class="bcard bcard--chart reveal">
+        <div class="bcard__head">
+          <h3 class="h-md">TIME TO BOOK</h3>
+          <p class="chart__nums"><span class="chart__a">3.1 min</span><span class="chart__b">6.4 min</span></p>
+        </div>
+        <div class="chart" role="img" aria-label="Line chart. Average booking time before the redesign was 6.4 minutes and after it is 3.1 minutes.">
+          <ul class="chart__y" aria-hidden="true"><li>6m</li><li>5m</li><li>4m</li><li>3m</li><li>2m</li></ul>
+          <svg class="chart__line chart__line--before" viewBox="0 0 314.055 73.6169" preserveAspectRatio="none" aria-hidden="true"><use href="#i-chart-before"/></svg>
+          <svg class="chart__line chart__line--after" viewBox="0 0 313.64 61.5706" preserveAspectRatio="none" aria-hidden="true"><use href="#i-chart-after"/></svg>
+          <div class="chart__tip" aria-hidden="true">
+            <svg viewBox="0 0 62 36.5"><use href="#i-tooltip"/></svg>
+            <span class="chart__tip-v">v2</span>
+            <span class="chart__tip-t"><i></i>3.1 min</span>
+          </div>
+        </div>
+        <div class="chart__legend"><span>Avg. booking time</span><span class="chart__keys"><span><i></i>Before</span><span><i></i>After</span></span></div>
+      </article>
+
+      <article class="bcard bcard--orbit reveal">
+        <div class="orbit__head">
+          <div>
+            <div class="stars stars--accent" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+            <p class="orbit__sub"><span>40+</span><br>users interviewed</p>
+          </div>
+          <p class="orbit__score">4.8/5<span style="display:block;margin-top:16px;font:400 16px/1.5 var(--font-body);letter-spacing:0;text-transform:none;color:var(--text-secondary)">Average from 12 reviews</span></p>
+        </div>
+        <div class="orbit" aria-hidden="true">
+          <svg class="orbit__rings" viewBox="0 0 381 227.181" preserveAspectRatio="none"><use href="#i-rings"/></svg>
+          <img class="orbit__av orbit__av--1" src="assets/img/orbit-1.jpg" width="40" height="40" loading="lazy" alt="">
+          <img class="orbit__av orbit__av--2" src="assets/img/orbit-2.jpg" width="40" height="40" loading="lazy" alt="">
+          <img class="orbit__av orbit__av--3" src="assets/img/orbit-3.jpg" width="40" height="40" loading="lazy" alt="">
+          <img class="orbit__av orbit__av--4" src="assets/img/orbit-4.jpg" width="40" height="40" loading="lazy" alt="">
+          <svg class="orbit__logo" viewBox="0 0 68 60"><use href="#i-logo"/></svg>
+        </div>
+      </article>
+
+      <article class="bcard bcard--compass reveal">
+        <svg class="bicon bicon--compass ico--64" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-compass"/></svg>
+        <div class="bcard__copy">
+          <h3 class="h-md">FLOWS THAT FEEL OBVIOUS</h3>
+          <p>I design clear steps and honest feedback, so users always know what happens next.</p>
+        </div>
+        <ul class="checks checks--muted checks--line">
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Journey and Flow Mapping</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Payment and Receipt Screens</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Error and Empty States</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Accessible UI Components</li>
+        </ul>
+        <a class="btn" href="#pricing"><span class="btn__pill">Start a project</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </article>
+
+      <div class="bento__row">
+        <article class="bcard bcard--stat reveal">
+          <svg class="bicon bicon--layers" viewBox="0 0 63 63" aria-hidden="true"><use href="#i-layers"/></svg>
+          <div><p class="stat__big">12</p><p class="stat__label">Booking Flows Designed</p></div>
+        </article>
+        <article class="bcard bcard--stat reveal">
+          <svg class="bicon bicon--check" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-check-square"/></svg>
+          <div><p class="stat__big">120+</p><p class="stat__label">Screens Delivered</p></div>
+        </article>
+        <article class="bcard bcard--stat reveal">
+          <svg class="bicon bicon--award" viewBox="0 0 62 62" aria-hidden="true"><use href="#i-award"/></svg>
+          <div><p class="stat__big">5</p><p class="stat__label">Years of Product Design</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PROJECTS -->
+<section class="work section panel" id="work" aria-labelledby="work-title" data-nav="work">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>SELECTED WORK</p>
+      <h2 class="h-xl" id="work-title">CASE STUDIES THAT SHOW<br>HOW I THINK</h2>
+    </header>
+    <div class="work__grid">
+      <article class="case card-hover reveal" data-case="hotel" tabindex="-1">
+        <div class="case__media">
+          <img src="assets/img/case-hotel.jpg" width="1400" height="933" loading="lazy" alt="Three phone screens of a hotel booking app showing search results, a room page and a booking confirmation">
+          <span class="case__tag"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>BOOKING UX</span>
+        </div>
+        <div class="case__body">
+          <h3 class="h-md">HOTEL BOOKING REDESIGN: FEWER STEPS FROM SEARCH TO CONFIRMATION</h3>
+          <button class="tlink" type="button" data-case-open="hotel"><span>Read case study<span class="sr-only">: Hotel booking redesign</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+      <article class="case card-hover reveal" data-case="train" tabindex="-1">
+        <div class="case__media">
+          <img src="assets/img/case-train.jpg" width="1400" height="933" loading="lazy" alt="Three phone screens of a train ticket app showing seat selection, payment methods and a ticket with a QR code">
+          <span class="case__tag"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>PAYMENTS</span>
+        </div>
+        <div class="case__body">
+          <h3 class="h-md">TRAIN TICKET APP: SEAT PICKING AND PAYMENT WITHOUT THE CONFUSION</h3>
+          <button class="tlink" type="button" data-case-open="train"><span>Read case study<span class="sr-only">: Train ticket app</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+    </div>
+    <p class="status reveal">
+      <span class="avatars avatars--tight"><img src="assets/img/av-a.jpg" width="48" height="48" loading="lazy" alt=""><img class="phone-circle" src="assets/icons/phone-circle.svg" width="48" height="48" alt=""></span>
+      <span>More case studies on the way. <a class="inline-link inline-link--soft" href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">Follow on Behance<span class="sr-only"> (opens in a new tab)</span></a></span>
+    </p>
+  </div>
+</section>
+
+<!-- 8. PRICING -->
+<section class="pricing section" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>WORK WITH ME</p>
+      <h2 class="h-xl" id="pricing-title">CLEAR PACKAGES FOR<br>EVERY STAGE</h2>
+    </header>
+    <div class="pricing__grid">
+      <article class="plan card-hover reveal">
+        <div class="plan__top">
+          <svg class="ico ico--48" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-split48"/></svg>
+          <h3 class="h-md">UX AUDIT</h3>
+          <p>A focused review of your current flow with a clear list of fixes.</p>
+        </div>
+        <div class="plan__bottom">
+          <p class="price"><span class="price__n">$450</span><span class="price__u"> / ONE TIME</span></p>
+          <ul class="checks checks--muted checks--lg"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Heuristic Review Report</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Top 10 Fixes, Prioritised</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Annotated Screenshots</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Walkthrough Call, 30 Minutes</li></ul>
+          <button class="btn btn--block" type="button" data-open="contact" data-plan="UX Audit"><span class="btn__pill">Book this plan<span class="sr-only">: UX Audit</span></span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </article>
+      <article class="plan plan--featured card-hover reveal">
+        <div class="plan__top">
+          <svg class="ico ico--48" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-lifebuoy48"/></svg>
+          <h3 class="h-md">FLOW DESIGN</h3>
+          <p>Flows backed by research and polished screens for one feature.</p>
+        </div>
+        <div class="plan__bottom">
+          <p class="price"><span class="price__n">$1,200</span><span class="price__u"> / PER FEATURE</span></p>
+          <ul class="checks checks--muted checks--lg"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>User Journey and Flow Map</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Wireframes and Polished Screens</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Interactive Prototype</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Two Revision Rounds</li></ul>
+          <button class="btn btn--primary btn--block" type="button" data-open="contact" data-plan="Flow Design"><span class="btn__pill">Book this plan<span class="sr-only">: Flow Design</span></span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </article>
+      <article class="plan card-hover reveal">
+        <div class="plan__top">
+          <svg class="ico ico--48" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-activity48"/></svg>
+          <h3 class="h-md">FULL PRODUCT</h3>
+          <p>Full design, from research to design system and handoff.</p>
+        </div>
+        <div class="plan__bottom">
+          <p class="price"><span class="price__n">$3,500</span><span class="price__u"> / PER PROJECT</span></p>
+          <ul class="checks checks--muted checks--lg"><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Research and Interviews</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Full Screen Set</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Design System and Tokens</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><use href="#i-check"/></svg>Developer Handoff Support</li></ul>
+          <button class="btn btn--block" type="button" data-open="contact" data-plan="Full Product"><span class="btn__pill">Book this plan<span class="sr-only">: Full Product</span></span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </article>
+    </div>
+    <ul class="perks reveal">
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-calendar"/></svg>Free intro call, 20 minutes</li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-banknote"/></svg>No hidden fees</li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-clock"/></svg>Pause or stop anytime</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. TESTIMONIALS -->
+<section class="testi section panel" id="kind-words" aria-labelledby="testi-title">
+  <div class="wrap testi__grid">
+    <div class="testi__left reveal">
+      <header>
+        <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>KIND WORDS</p>
+        <h2 class="h-xl" id="testi-title">WORDS FROM THE TEAMS<br>I'VE WORKED WITH</h2>
+      </header>
+      <div class="rating">
+        <div class="rating__a"><p class="rating__n">4.8/5</p><p>(Based on 12 reviews)</p></div>
+        <div class="rating__b"><p>Average Rating</p><div class="stars stars--accent" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div></div>
+      </div>
+    </div>
+    <figure class="quote reveal">
+      <div class="quote__top">
+        <div class="quote__who">
+          <img src="assets/img/av-sara.jpg" width="48" height="48" loading="lazy" alt="Portrait of Sara Khan">
+          <figcaption><p class="person__name person__name--lg">SARA KHAN</p><p class="quote__role">Engineering Lead</p></figcaption>
+        </div>
+        <svg class="quote__icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-quote"/></svg>
+      </div>
+      <div class="stars stars--accent quote__stars" aria-label="Five stars"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg></div>
+      <blockquote><p>"Arif asks the question nobody wanted to ask, then draws the answer so clearly that engineering has nothing left to guess. In his first week he interviewed ten travelers, mapped where they got stuck and showed us three screens we could cut. Our booking flow lost two steps and the team stopped arguing about it."</p></blockquote>
+      <p class="quote__result"><span>38%</span>Fewer people leave at payment after the new flow.</p>
+    </figure>
+  </div>
+</section>
+
+<!-- 10. BLOG -->
+<section class="blog section" id="notes" aria-labelledby="notes-title" data-nav="notes">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#i-asterisk"/></svg>NOTES</p>
+      <h2 class="h-xl" id="notes-title">WHAT I LEARN FROM<br>WATCHING USERS BOOK</h2>
+    </header>
+    <div class="blog__grid">
+      <article class="post reveal">
+        <div class="post__img"><img src="assets/img/blog-1.jpg" width="960" height="720" loading="lazy" alt="Two people talking across a café table during a user interview"></div>
+        <h3 class="h-md">WHY I INTERVIEW USERS BEFORE I OPEN FIGMA</h3>
+        <a class="tlink" href="post-1.html"><span>Read more<span class="sr-only">: Why I interview users before I open Figma</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="post reveal">
+        <div class="post__img"><img src="assets/img/blog-2.jpg" width="960" height="720" loading="lazy" alt="A phone on a dark desk showing a failed card payment screen with a green retry button"></div>
+        <h3 class="h-md">THREE PAYMENT SCREEN MISTAKES THAT COST BOOKINGS</h3>
+        <a class="tlink" href="post-2.html"><span>Read more<span class="sr-only">: Three payment screen mistakes that cost bookings</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="post reveal">
+        <div class="post__img"><img src="assets/img/blog-3.jpg" width="960" height="720" loading="lazy" alt="A monitor showing a design system with colour swatches and type styles, lit green"></div>
+        <h3 class="h-md">HOW TO HAND OFF TOKENS WITHOUT A THREE HOUR MEETING</h3>
+        <a class="tlink" href="post-3.html"><span>Read more<span class="sr-only">: How to hand off tokens without a three hour meeting</span></span><svg class="tlink__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 11. FOOTER -->
+<footer class="footer" id="contact" aria-labelledby="footer-title" data-nav="contact">
+  <div class="wrap footer__inner">
+    <div class="footer__top">
+      <div class="footer__cta-wrap" style="display:flex;flex-direction:column;align-items:flex-start;gap:32px">
+        <h2 class="footer__cta" id="footer-title">LET'S BUILD SOMETHING CLEAR</h2>
+        <button class="btn btn--primary" type="button" data-open="contact"><span class="btn__pill">Book a call</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+      </div>
+      <ul class="social" aria-label="Social profiles (demo links)">
+        <li><a class="social__btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a class="social__btn" href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" aria-label="Dribbble (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-dribbble"/></svg></a></li>
+        <li><a class="social__btn" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+        <li><a class="social__btn" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" aria-label="Figma (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-figma"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <a class="logo" href="#home" aria-label="Arif, back to top"><svg class="logo__mark" viewBox="0 0 68 60" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">ARIF</span></a>
+        <p>Arif Chowdhury is a product designer in Dhaka, designing booking and payment flows for travel and service products.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Quick links">
+        <h3 class="footer__h">QUICK LINKS</h3>
+        <ul>
+          <li><a class="flink" href="#home">Home</a></li>
+          <li><a class="flink" href="#about">About</a></li>
+          <li><a class="flink" href="#work">Work</a></li>
+          <li><a class="flink" href="#notes">Notes</a></li>
+          <li><a class="flink" href="#contact" data-open="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__nav" aria-label="Services">
+        <h3 class="footer__h">SERVICES</h3>
+        <ul>
+          <li><a class="flink" href="#services">User Research</a></li>
+          <li><a class="flink" href="#services">UX Flows</a></li>
+          <li><a class="flink" href="#services">High Fidelity UI</a></li>
+          <li><a class="flink" href="#services">Design Systems</a></li>
+          <li><a class="flink" href="#services">Prototyping</a></li>
+        </ul>
+      </nav>
+      <div class="footer__touch">
+        <h3 class="footer__h">GET IN TOUCH</h3>
+        <div class="crow">
+          <span class="crow__circle"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-headset"/></svg></span>
+          <span class="crow__text"><a href="tel:+8801700000000">+880-170-0000</a><br><a href="mailto:hello@arif.example">hello@arif.example</a></span>
+        </div>
+        <div class="crow crow--static">
+          <span class="crow__circle"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-map-pin"/></svg></span>
+          <address class="crow__text">Road 00, Gulshan,<br>Dhaka, Bangladesh (demo)</address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright"><div class="wrap"><p>Copyright © 2026 Arif Chowdhury. Demo portfolio.</p><p class="copyright__links" style="margin-top:16px"><a class="flink" href="privacy.html">Privacy</a><span aria-hidden="true">  </span><a class="flink" href="terms.html" style="margin-left:24px">Terms</a></p></div></div>
+</footer>
+
+<!-- Overlay: contact form -->
+<dialog class="modal modal--contact" id="contact-dialog" aria-labelledby="contact-title" aria-describedby="contact-desc">
+  <div class="modal__panel">
+    <div data-view="form">
+      <h2 class="modal__title" id="contact-title">SEND A MESSAGE</h2>
+      <p class="modal__text" id="contact-desc">Tell me about your product. Demo form: nothing is sent.</p>
+      <form id="contact-form" novalidate>
+        <input type="hidden" name="plan" id="f-plan" value="">
+        <p class="modal__text" id="contact-plan" hidden></p>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required aria-describedby="f-name-err">
+          <p class="field__err" id="f-name-err" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="f-email-err">
+          <p class="field__err" id="f-email-err" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label for="f-msg">What are you building?</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="A short note about your product" required aria-describedby="f-msg-err"></textarea>
+          <p class="field__err" id="f-msg-err" role="alert" hidden></p>
+        </div>
+        <div class="modal__actions">
+          <button class="btn btn--primary" type="submit"><span class="btn__pill">Send message</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+          <button class="btn" type="button" data-close><span class="btn__pill">Close</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </form>
+    </div>
+    <div data-view="sending" hidden>
+      <h2 class="modal__title">SENDING...</h2>
+      <p class="modal__text" role="status">Hold on a moment.</p>
+      <div class="modal__actions">
+        <button class="btn btn--primary" type="button" disabled aria-disabled="true"><span class="btn__pill">Sending</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+      </div>
+    </div>
+    <div data-view="success" hidden>
+      <div class="modal__check"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-tick"/></svg></div>
+      <h2 class="modal__title" tabindex="-1" data-success-title>MESSAGE SENT</h2>
+      <p class="modal__text">Thanks. Arif replies within two working days. (Demo: nothing was actually sent.)</p>
+      <div class="modal__actions">
+        <button class="btn" type="button" data-close><span class="btn__pill">Done</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Overlay: case study -->
+<dialog class="modal modal--case" id="case-dialog" aria-labelledby="case-title" aria-describedby="case-desc">
+  <div class="modal__panel">
+    <div class="case-head">
+      <div class="case-head__text">
+        <span class="chip chip--selected" id="case-chip">BOOKING UX</span>
+        <h2 class="modal__title" id="case-title">HOTEL BOOKING REDESIGN</h2>
+      </div>
+      <button class="case-close" type="button" data-close>Close<span class="sr-only"> case study</span></button>
+    </div>
+    <div class="case-body">
+      <p class="modal__text modal__text--lg" id="case-desc">Demo case study. Fewer steps from search to confirmation, found by watching ten travelers book on their phones.</p>
+      <img class="modal__cover" id="case-cover" src="assets/img/case-hotel.jpg" width="1400" height="933" alt="Three phone screens of a hotel booking app showing search results, a room page and a booking confirmation">
+
+      <div class="case-content" id="case-content-hotel" hidden>
+        <p class="case-meta"><span class="case-pill">Demo case study</span><span>Fictional client: a hotel booking app</span></p>
+        <section class="case-sec" aria-labelledby="hotel-problem">
+          <h3 id="hotel-problem">Problem</h3>
+          <p>Travelers needed 6.4 minutes on average to book a room, and many gave up between the room page and the confirmation. The flow asked for the same details twice and showed the full price only at the very end.</p>
+        </section>
+        <section class="case-sec" aria-labelledby="hotel-role">
+          <h3 id="hotel-role">My role and team</h3>
+          <p>Arif, product designer. Owned research, journeys, flows and screens. Rafi Ahmed, engineering lead, checked every flow for build effort before it moved on.</p>
+        </section>
+        <section class="case-sec" aria-labelledby="hotel-process">
+          <h3 id="hotel-process">Process</h3>
+          <ol class="case-steps">
+            <li><strong>Discover.</strong> Watched ten travelers book a room on their phones and noted every pause.</li>
+            <li><strong>Define.</strong> Mapped the booking journey and marked each step that asked for something twice.</li>
+            <li><strong>Design.</strong> Redrew the flow from search to receipt, edge cases included, and tested a clickable prototype.</li>
+            <li><strong>Deliver.</strong> Handed over specs and states, then reviewed the build with engineering in two rounds.</li>
+          </ol>
+        </section>
+        <section class="case-sec" aria-labelledby="hotel-screens">
+          <h3 id="hotel-screens">Key screens</h3>
+          <ul class="case-screens">
+            <li class="case-screen"><span class="case-screen__n" aria-hidden="true">1</span><p><strong>Search results.</strong> Price and room type are visible before any tap.</p></li>
+            <li class="case-screen"><span class="case-screen__n" aria-hidden="true">2</span><p><strong>Room page.</strong> The total with taxes sits next to the book button.</p></li>
+            <li class="case-screen"><span class="case-screen__n" aria-hidden="true">3</span><p><strong>Confirmation.</strong> Dates, address and a change option on one screen.</p></li>
+          </ul>
+          <p class="case-note">Neutral placeholders for the demo. The photo above shows the three screens together.</p>
+        </section>
+        <section class="case-sec" aria-labelledby="hotel-outcome">
+          <h3 id="hotel-outcome">Outcome</h3>
+          <dl class="case-stats">
+            <div><dt>3.1 min</dt><dd>Average booking time, instead of 6.4 min</dd></div>
+            <div><dt>12</dt><dd>Flows redesigned</dd></div>
+            <div><dt>4.8/5</dt><dd>Average from 12 reviews</dd></div>
+          </dl>
+        </section>
+        <section class="case-sec" aria-labelledby="hotel-learned">
+          <h3 id="hotel-learned">What I learned</h3>
+          <p>Showing the total price early removed more doubt than any visual polish. Watching people book beats debating it in a meeting.</p>
+        </section>
+      </div>
+
+      <div class="case-content" id="case-content-train" hidden>
+        <p class="case-meta"><span class="case-pill">Demo case study</span><span>Fictional client: a train ticket app</span></p>
+        <section class="case-sec" aria-labelledby="train-problem">
+          <h3 id="train-problem">Problem</h3>
+          <p>Buyers could pay by card, mobile wallet or a cash voucher, but the payment flow took seven steps and failed without saying why. When a code was rejected, most people left the app and did not come back.</p>
+        </section>
+        <section class="case-sec" aria-labelledby="train-role">
+          <h3 id="train-role">My role and team</h3>
+          <p>Arif, product designer. Owned the payment flow, error states and handover. Sara Khan, engineering lead, built the payment integration and flagged edge cases early.</p>
+        </section>
+        <section class="case-sec" aria-labelledby="train-process">
+          <h3 id="train-process">Process</h3>
+          <ol class="case-steps">
+            <li><strong>Discover.</strong> Read support tickets and listed every place a payment could fail.</li>
+            <li><strong>Define.</strong> Set two goals: fewer steps, and a plain message for every failure.</li>
+            <li><strong>Design.</strong> Drew seat selection, payment methods and the ticket, then wrote the copy for each error.</li>
+            <li><strong>Deliver.</strong> Shipped a state list with the specs and checked each state in the build.</li>
+          </ol>
+        </section>
+        <section class="case-sec" aria-labelledby="train-screens">
+          <h3 id="train-screens">Key screens</h3>
+          <ul class="case-screens">
+            <li class="case-screen"><span class="case-screen__n" aria-hidden="true">1</span><p><strong>Seat selection.</strong> Free, taken and chosen seats read clearly without a legend.</p></li>
+            <li class="case-screen"><span class="case-screen__n" aria-hidden="true">2</span><p><strong>Payment methods.</strong> One list, with the fastest method first.</p></li>
+            <li class="case-screen"><span class="case-screen__n" aria-hidden="true">3</span><p><strong>Ticket.</strong> A large QR code and the boarding details, usable offline.</p></li>
+          </ul>
+          <p class="case-note">Neutral placeholders for the demo. The photo above shows the three screens together.</p>
+        </section>
+        <section class="case-sec" aria-labelledby="train-outcome">
+          <h3 id="train-outcome">Outcome</h3>
+          <dl class="case-stats">
+            <div><dt>38%</dt><dd>Fewer people leaving at payment</dd></div>
+            <div><dt>9</dt><dd>Error and empty states designed</dd></div>
+            <div><dt>7 to 4</dt><dd>Steps in the payment flow</dd></div>
+          </dl>
+        </section>
+        <section class="case-sec" aria-labelledby="train-learned">
+          <h3 id="train-learned">What I learned</h3>
+          <p>Errors are part of the flow and need design time from day one. Fewer steps only help when each remaining step says what happens next.</p>
+        </section>
+      </div>
+
+      <p class="case-note case-note--end">All names, clients and numbers in this case study are fictional demo content.</p>
+      <div class="modal__actions">
+        <button class="btn" type="button" data-close><span class="btn__pill">Close</span><span class="btn__circle"><svg class="btn__arrow" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/js/main.js" defer></script>
+<script>
+/* Plan name: set by buttons with data-plan, shown as 'Plan: X' in the contact dialog. Runs after main.js form reset (DOMContentLoaded fires after deferred scripts). */
+document.addEventListener('DOMContentLoaded', function () {
+  var input = document.getElementById('f-plan'), line = document.getElementById('contact-plan');
+  if (!input || !line) return;
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('[data-open="contact"]') : null;
+    if (!t) return;
+    var plan = t.getAttribute('data-plan') || '';
+    input.value = plan; line.textContent = plan ? 'Plan: ' + plan : ''; line.hidden = !plan;
+  });
+});
+</script>
+<script src="assets/js/parity-b.js" defer></script>
+<script src="assets/js/parity-c.js" defer></script>
+<script src="assets/js/parity-d.js" defer></script>
+</body>
+</html>

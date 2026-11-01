@@ -1,0 +1,19 @@
+/* Simple inner pages (404, privacy, terms, notes). Uses tokens from styles.css. */
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.page__bar { padding-block: 24px; border-bottom: 1px solid var(--border-default); }
+.page__bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.page__main { flex: 1; padding-block: clamp(48px, 8vw, 120px); }
+.page__narrow { max-width: 760px; }
+.page__title { font: 700 clamp(40px, 7vw, 96px)/.95 var(--font-display); text-transform: uppercase; margin-bottom: 24px; }
+.page__title--sm { font-size: clamp(32px, 5vw, 56px); }
+.page__lead { font-size: 18px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 32px; }
+.page__body h2 { font: 700 24px/1.2 var(--font-display); text-transform: uppercase; margin: 40px 0 12px; }
+.page__body p, .page__body li { line-height: 1.6; color: var(--text-secondary); margin-bottom: 12px; }
+.page__body ul { padding-left: 20px; list-style: disc; }
+.page__note { display: inline-block; margin-bottom: 24px; padding: 6px 12px; border: 1px solid var(--border-default); border-radius: var(--radius-full); font-size: 14px; color: var(--text-secondary); }
+.page__img { display: block; width: 100%; height: auto; border-radius: 16px; margin-bottom: 32px; }
+.page__foot { padding-block: 32px; border-top: 1px solid var(--border-default); color: var(--text-secondary); font-size: 14px; }
+.page__foot .wrap { display: flex; gap: 24px; flex-wrap: wrap; }
+.page__foot a { text-decoration: underline; text-underline-offset: 3px; }
+.page__foot a:hover { color: var(--text-accent); }
+.page .reveal { opacity: 1; transform: none; }

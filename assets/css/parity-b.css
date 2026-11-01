@@ -1,0 +1,95 @@
+/* Parity area B: bento, projects, pricing, blog, footer, overlays. Figma prototype is the source of truth.
+   Loaded after styles.css. Spring presets GENTLE / SLOW approximated by --spring. */
+:root { --spring: cubic-bezier(.34, 1.2, .64, 1); }
+
+/* ---------- Transitions that the .reveal shorthand was silently overriding ---------- */
+.js .reveal.card-hover { transition: opacity .7s ease-out, transform .7s ease-out, box-shadow .25s ease-out, background-color .2s ease-out; }
+.bcard, .js .bcard.reveal { transition: opacity .7s ease-out, transform .7s ease-out, box-shadow .3s ease-out, padding .3s ease-out; }
+
+/* ---------- B1: bento hover model. Card never moves; stroke + glow; content lifts 6px via padding ---------- */
+.bcard { --bp: 40px; --bpb: var(--bp); }
+.bcard--orbit { --bpb: 0px; }
+@media (max-width: 700px) { .bcard { --bp: 28px; } .bcard--orbit { --bpb: 8px; } }
+.bcard:hover {
+  transform: none;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,.15), inset -1px -1px 0 rgba(255,255,255,.15), inset 0 0 0 1px var(--border-accent), 0 0 28px 2px rgba(0,223,130,.35);
+  padding-top: calc(var(--bp) - 6px);
+  padding-bottom: calc(var(--bpb) + 6px);
+}
+
+/* ---------- B2: icon rotation signs (CSS sign = opposite of Figma sign) ---------- */
+.bicon { transition: transform .3s ease-out; }
+.bcard--stat:hover .bicon--layers { transform: rotate(14deg); }
+.bcard--stat:hover .bicon--check { transform: rotate(-14deg); }
+.bcard--stat:hover .bicon--award { transform: rotate(14deg); }
+.bcard--compass:hover .bicon { transform: rotate(-18deg); }
+
+/* ---------- B3: chart card ---------- */
+.chart__line, .chart__tip { transition: transform .3s ease-out; }
+.bcard--chart:hover .chart__line--after { transform: none; }
+.bcard--chart:hover .chart__line--before { transform: translateY(-8px); }
+.bcard--chart:hover .chart__tip { transform: translate(-60px, -6px); }
+
+/* ---------- B4: orbit card star spacing (gap 4 to 10) ---------- */
+.bcard--orbit .stars--accent { transition: gap .3s ease-out; }
+.bcard--orbit:hover .stars--accent { gap: 10px; }
+
+/* ---------- B5: orbit avatar float. 10px per half cycle, 0.8s dwell at each end, 2.5s ease-in-out hops, 6.6s loop ---------- */
+.orbit__av { animation: none; }
+.orbit__av--1, .orbit__av--3 { animation: orbit-up 6.6s ease-in-out infinite; }
+.orbit__av--2, .orbit__av--4 { animation: orbit-down 6.6s ease-in-out infinite; }
+@keyframes orbit-up { 0%, 12.12% { transform: translateY(0); } 50%, 62.12% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+@keyframes orbit-down { 0%, 12.12% { transform: translateY(0); } 50%, 62.12% { transform: translateY(10px); } 100% { transform: translateY(0); } }
+
+/* ---------- B6: compass rows step in 6/10/14/18px, no stagger ---------- */
+.bcard--compass .checks li { transition: transform .3s ease-out; transition-delay: 0s; }
+.bcard--compass:hover .checks li:nth-child(1) { transform: translateX(6px); transition-delay: 0s; }
+.bcard--compass:hover .checks li:nth-child(2) { transform: translateX(10px); transition-delay: 0s; }
+.bcard--compass:hover .checks li:nth-child(3) { transform: translateX(14px); transition-delay: 0s; }
+.bcard--compass:hover .checks li:nth-child(4) { transform: translateX(18px); transition-delay: 0s; }
+
+/* ---------- B7: project images: sheen, no zoom ---------- */
+.case { cursor: auto; }
+.case__media img { transition: none; }
+.case:hover .case__media img { transform: none; }
+.case__media { container-type: inline-size; }
+.case__media::before {
+  --k: calc(100cqw / 693);
+  content: ""; position: absolute; left: 0; top: 0; z-index: 1; pointer-events: none;
+  width: calc(var(--k) * 812); height: calc(var(--k) * 10);
+  background: #d9d9d9; opacity: 0; transform-origin: 0 0;
+  transform: translate(calc(var(--k) * -1.5), calc(var(--k) * 426.9)) rotate(-31.81deg);
+  transition: transform 1.5331s var(--spring), width 1.5331s var(--spring), height 1.5331s var(--spring), opacity 1.5331s var(--spring);
+}
+.case__media:hover::before {
+  width: calc(var(--k) * 812); height: calc(var(--k) * 741); opacity: .1;
+  transform: translate(calc(var(--k) * -194.1), calc(var(--k) * 116.4)) rotate(-31.81deg);
+}
+
+/* ---------- B8: blog image growth (zoom 1.227 anchored top-left, radius 25 to 30.68, 1.6668s) ---------- */
+.post__img { transition: border-radius 1.6668s var(--spring); }
+.post__img img { transition: transform 1.6668s var(--spring); transform-origin: 2.4% 2.9%; }
+.post:hover .post__img { box-shadow: none; border-radius: 30.68px; }
+.post:hover .post__img img { transform: scale(1.227); }
+.post:hover .h-md { color: inherit; }
+
+/* ---------- B9: overlays are a pure dissolve: no scrim, no blur, no translate or scale ---------- */
+.modal::backdrop { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.modal[open] { animation: modal-in .25s ease-out; }
+@keyframes modal-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- B10: contact Sending / Success dissolve in over 0.2s ease-out ---------- */
+.modal__panel > div[data-view="sending"]:not([hidden]),
+.modal__panel > div[data-view="success"]:not([hidden]) { animation: view-in .2s ease-out; }
+@keyframes view-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- B11: footer timings 0.25s ---------- */
+.social__btn { transition-duration: .25s; }
+.crow__circle { transition-duration: .25s; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .orbit__av { animation: none !important; }
+  .modal__panel > div[data-view] { animation: none !important; }
+  .bcard, .bicon, .bcard--orbit .stars--accent, .bcard--compass .checks li, .case__media::before, .post__img, .post__img img, .social__btn, .crow__circle { transition-duration: .01ms !important; }
+}

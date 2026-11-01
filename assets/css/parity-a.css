@@ -1,0 +1,81 @@
+/* Figma parity, area A (header, hero, marquee, badges, about, services, choose, process).
+   Numbers come from PARITY.md. Loaded after styles.css. */
+
+/* A8: nav link hover underline (2px, label width, 0.2s ease-out) */
+.nav__link::after { transition: transform .2s ease-out; }
+.nav__link:hover::after { transform: scaleX(1); }
+
+/* A9: menu button, 0.25s ease-out, icon colour unchanged on hover */
+.menu-btn { transition: background-color .25s ease-out; }
+.menu-btn:hover { color: var(--text-primary); }
+.menu-btn__icon { transition: transform .25s ease-out; }
+
+/* A6: badge centre logo, one pulse per 10s linear, in phase with the 20s ring turn */
+.badge__logo { animation: pulse 10s linear infinite; }
+
+/* A7: marquee, 40s linear */
+.marquee__track { animation-duration: 40s; }
+
+/* Sheen sweeps. 1 design px = 100cqw / design width of the component. */
+.hero__sheen, .choose__img::after, .pcard__imgbox::after { pointer-events: none; }
+
+/* A3: hero background sheen (component 1480 wide, 0.8s ease-out) */
+.hero__sheen {
+  position: absolute; inset: 0; overflow: hidden; container-type: inline-size;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1480 736' preserveAspectRatio='none'%3E%3Cpath d='M850 169C850 182.807 861.193 194 875 194H1455C1468.81 194 1480 205.193 1480 219V711C1480 724.807 1468.81 736 1455 736H25C11.1929 736 0 724.807 0 711V25C0 11.1929 11.1929 0 25 0H825C838.807 0 850 11.1929 850 25V169Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1480 736' preserveAspectRatio='none'%3E%3Cpath d='M850 169C850 182.807 861.193 194 875 194H1455C1468.81 194 1480 205.193 1480 219V711C1480 724.807 1468.81 736 1455 736H25C11.1929 736 0 724.807 0 711V25C0 11.1929 11.1929 0 25 0H825C838.807 0 850 11.1929 850 25V169Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+}
+.hero__sheen::after {
+  --u: calc(100cqw / 1480);
+  content: ""; position: absolute; left: 0; top: 0; transform-origin: 0 0;
+  width: calc(20 * var(--u)); height: calc(823 * var(--u));
+  background: #a6a6a6; opacity: 0;
+  transform: translate(calc(917.7 * var(--u)), calc(175.9 * var(--u))) rotate(45deg);
+  transition: transform .8s ease-out, width .8s ease-out, height .8s ease-out, background-color .8s ease-out, opacity .8s ease-out;
+}
+.hero__media:hover .hero__sheen::after {
+  width: calc(1549 * var(--u)); height: calc(1957 * var(--u));
+  background: #bfbfbf; opacity: .1;
+  transform: translate(calc(925.4 * var(--u)), calc(-919.7 * var(--u))) rotate(45deg);
+}
+@media (max-width: 900px) {
+  /* stacked layout: sheen covers the image only (no mask there) */
+  .hero__sheen { -webkit-mask: none; mask: none; inset: auto; left: 0; top: 0; width: 100%; aspect-ratio: 1536 / 864; border-radius: 25px; }
+}
+
+/* A4: choose photos sheen (component 356 wide, 1.5331s gentle spring approximated) */
+.choose__img { position: relative; container-type: inline-size; }
+.choose__img::after {
+  --u: calc(100cqw / 356);
+  content: ""; position: absolute; left: 0; top: 0; transform-origin: 0 0;
+  width: calc(10 * var(--u)); height: calc(685 * var(--u));
+  background: #d9d9d9; opacity: 0;
+  transform: translate(calc(348.2 * var(--u)), calc(-7.3 * var(--u))) rotate(30.47deg);
+  transition: transform 1.5331s cubic-bezier(.34, 1.2, .64, 1), width 1.5331s cubic-bezier(.34, 1.2, .64, 1), height 1.5331s cubic-bezier(.34, 1.2, .64, 1), background-color 1.5331s cubic-bezier(.34, 1.2, .64, 1), opacity 1.5331s cubic-bezier(.34, 1.2, .64, 1);
+}
+.choose__img:hover::after {
+  width: calc(601.5 * var(--u)); height: calc(685 * var(--u));
+  background: rgba(217, 217, 217, .15); opacity: 1;
+  transform: translate(calc(93.3 * var(--u)), calc(-157.3 * var(--u))) rotate(30.47deg);
+}
+
+/* A5: process "Define" photo sheen (component 272 wide, 1.5331s) */
+.pcard__imgbox { position: relative; overflow: hidden; border-radius: 10px; margin-top: 22px; container-type: inline-size; }
+.pcard__imgbox .pcard__img { margin-top: 0; }
+.pcard__imgbox::after {
+  --u: calc(100cqw / 272);
+  content: ""; position: absolute; left: 0; top: 0; transform-origin: 0 0;
+  width: calc(2.4 * var(--u)); height: calc(307 * var(--u));
+  background: #fcfcfc; opacity: 0;
+  transform: translate(calc(272.9 * var(--u)), calc(2.5 * var(--u))) rotate(-167.01deg);
+  transition: transform 1.5331s cubic-bezier(.34, 1.2, .64, 1), width 1.5331s cubic-bezier(.34, 1.2, .64, 1), height 1.5331s cubic-bezier(.34, 1.2, .64, 1), background-color 1.5331s cubic-bezier(.34, 1.2, .64, 1), opacity 1.5331s cubic-bezier(.34, 1.2, .64, 1);
+}
+.pcard__imgbox:hover::after {
+  width: calc(282.4 * var(--u)); height: calc(321.4 * var(--u));
+  background: rgba(252, 252, 252, .15); opacity: .2;
+  transform: translate(calc(150 * var(--u)), calc(-147 * var(--u))) rotate(45.26deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__sheen::after, .choose__img::after, .pcard__imgbox::after, .nav__link::after { transition-duration: .01ms !important; }
+}

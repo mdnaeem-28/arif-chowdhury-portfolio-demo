@@ -1,0 +1,49 @@
+/* Parity area D: case study dialog (structured, scrolls inside the panel, sticky header with Close). */
+.modal--case { width: min(880px, calc(100vw - 24px)); }
+.modal--case .modal__panel { padding: 0; gap: 0; align-items: stretch; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+.case-head { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 40px; background: var(--bg-card); border-bottom: 1px solid var(--border-default); }
+.case-head__text { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; }
+.case-head .modal__title { font-size: 40px; overflow-wrap: anywhere; }
+.case-close { flex: none; min-width: 44px; min-height: 44px; padding: 10px 20px; border: 1px solid var(--border-default); border-radius: var(--radius-full); background: var(--bg-pill); color: var(--text-primary); font: 500 16px/1 var(--font-body); cursor: pointer; transition: background-color .2s ease; }
+.case-close:hover { background: var(--bg-pill-hover); }
+.case-close:active { background: var(--bg-pill-pressed); }
+.case-body { display: flex; flex-direction: column; gap: 24px; align-items: stretch; padding: 32px 40px 40px; min-width: 0; }
+.case-body .modal__cover { height: auto; aspect-ratio: 3 / 2; max-height: 320px; }
+.case-content[hidden] { display: none; }
+.case-content { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+.case-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; color: var(--text-secondary); font-size: 14px; line-height: 1.4; }
+.case-pill { display: inline-block; padding: 6px 12px; border: 1px solid var(--border-accent); border-radius: var(--radius-full); color: var(--text-accent); font-weight: 700; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.case-sec { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.case-sec h3 { font: 700 24px/1 var(--font-display); text-transform: uppercase; color: var(--text-primary); }
+.case-sec p, .case-steps li { color: var(--text-secondary); line-height: 1.55; overflow-wrap: anywhere; }
+.case-sec strong { color: var(--text-primary); font-weight: 700; }
+.case-steps { list-style: none; counter-reset: step; display: grid; gap: 12px; padding: 0; margin: 0; }
+.case-steps li { counter-increment: step; position: relative; padding-left: 40px; }
+.case-steps li::before { content: counter(step); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--bg-pill); color: var(--text-accent); font: 700 14px/1 var(--font-body); }
+.case-screens { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; }
+.case-screen { display: flex; flex-direction: column; gap: 12px; min-height: 160px; padding: 20px; background: var(--bg-pill-pressed); border: 1px solid var(--border-default); border-radius: var(--radius-md); }
+.case-screen__n { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--bg-pill); color: var(--text-accent); font: 700 16px/1 var(--font-body); }
+.case-screen p { font-size: 14px; }
+.case-note { color: var(--text-secondary); font-size: 13px; line-height: 1.4; }
+.case-note--end { padding-top: 4px; border-top: 1px solid var(--border-default); padding-top: 16px; }
+.case-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; }
+.case-stats dt { font: 700 40px/.95 var(--font-display); color: var(--text-accent); margin-bottom: 6px; overflow-wrap: anywhere; }
+.case-stats dd { margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.35; }
+.case-stats > div { min-width: 0; }
+
+@media (max-width: 720px) {
+  .case-head { padding: 14px 16px; gap: 12px; }
+  .case-head .modal__title { font-size: 28px; }
+  .case-body { padding: 20px 16px 24px; gap: 20px; }
+  .case-body .modal__cover { max-height: 200px; }
+  .case-screens, .case-stats { grid-template-columns: 1fr; }
+  .case-screen { min-height: 0; }
+  .case-stats dt { font-size: 34px; }
+}
+@media (forced-colors: active) {
+  .case-head, .case-close, .case-screen { border-color: CanvasText; }
+  .case-pill { border-color: CanvasText; color: CanvasText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal--case, .modal--case * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

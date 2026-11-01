@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arif Chowdhury, Booking Flow Case Study (demo)</title>
+<meta name="description" content="Demo case study for a fictional designer. Landing page design, design system and interactive prototype.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0d;--surface:#16161a;--text:#f2f2f4;--muted:#9a9aa5;--accent:#00DF82;--line:#26262c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(11,11,13,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar a,.bar button{font:inherit;font-size:14px;font-weight:500;border-radius:8px;padding:8px 14px;min-height:36px;text-decoration:none;display:inline-flex;align-items:center}
+.back{color:var(--text)}
+.back:hover{color:var(--accent)}
+.proto{background:var(--accent);color:#04130c;border:0;cursor:pointer}
+.proto[aria-disabled="true"]{background:var(--surface);color:var(--muted);border:1px solid var(--line);cursor:not-allowed}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{max-width:1400px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:24px}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border-radius:6px;background:var(--surface)}
+.cover{max-width:808px;margin:0 auto;width:100%}
+.note{text-align:center;color:var(--muted);font-size:14px;margin:8px 0 0}
+.fade{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade{opacity:1;transform:none;transition:none}}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:24px 16px 40px;border-top:1px solid var(--line)}
+@media (max-width:480px){.bar a,.bar button{padding:8px 10px;font-size:13px}main{padding:16px 0 32px;gap:16px}figure img{border-radius:0}.cover{padding:0 0}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="back" href="../index.html">&larr; Back to portfolio</a>
+  <!-- PROTOTYPE LINK: when the Figma prototype share link is ready, set href below to it,
+       remove aria-disabled, tabindex and the title, and drop the .proto[aria-disabled] look. -->
+  <a class="proto" id="prototype" href="#prototype" aria-disabled="true" tabindex="-1" title="Prototype link added later">Open interactive prototype</a>
+</header>
+
+<main>
+  <figure class="cover fade">
+    <img src="img/cover.jpg" width="808" height="632" alt="Cover: Arif, demo portfolio. Landing page, design system and prototype. UI/UX, components, tokens.">
+  </figure>
+  <p class="note">Demo case study for a fictional designer. All names, numbers and contacts are fictional.</p>
+
+  <figure class="fade"><img loading="lazy" src="img/slide-01.jpg" width="1400" height="1000" alt="Slide 1: Arif Chowdhury, landing page design, design system and interactive prototype (hero mockup)"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-02.jpg" width="1400" height="800" alt="Slide 2: Overview. A landing page that explains how a designer thinks, with role and scope"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-03.jpg" width="1400" height="2130" alt="Slide 3: Hero and about sections of the landing page"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-04.jpg" width="1400" height="1599" alt="Slide 4: Services and why me. Design that makes booking easy"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-05.jpg" width="1400" height="1643" alt="Slide 5: My process, from first question to final screen, and results"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-06.jpg" width="1400" height="2176" alt="Slide 6: Selected work and pricing, including the hotel booking redesign case study"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-07.jpg" width="1400" height="1914" alt="Slide 7: Kind words from teams, rated 4.8 out of 5 from 12 reviews, plus notes and contact"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-08.jpg" width="1400" height="800" alt="Slide 8: Logo. A for Arif, a for the first step"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-09.jpg" width="1400" height="1292" alt="Slide 9: Design tokens. One set of variables drives every screen"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-10.jpg" width="1400" height="2304" alt="Slide 10: Components and states. Every action has default, hover, pressed, focus and disabled"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-11.jpg" width="1400" height="1100" alt="Slide 11: Prototype interactions. It behaves like a real site"></figure>
+  <figure class="fade"><img loading="lazy" src="img/slide-12.jpg" width="1400" height="700" alt="Slide 12: Thank you. Demo project with a fictional client and placeholder contact details"></figure>
+</main>
+
+<footer>Demo case study for a fictional designer. All names, numbers and contacts are fictional.</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.fade');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -5% 0px'});
+  els.forEach(function(e){io.observe(e)});
+  document.getElementById('prototype').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true')e.preventDefault();});
+})();
+</script>
+</body>
+</html>
